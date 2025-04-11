@@ -22,14 +22,14 @@ jobs:
       fail-fast: false
 
     steps:
-    - name: Checkout NodeInject
+    - name: Checkout NodeInject 
       uses: actions/checkout@v3
       with:
         repository: DiamondHunters/NodeInject
-    - name: Checkout repository
+    - name: Checkout repository 
       uses: actions/checkout@v3
       with:
-        path: './js'
+          path: './js'
     - name: Install Rust
       uses: actions-rs/toolchain@v1
       with:
@@ -67,7 +67,7 @@ jobs:
           tar -czf "${{ matrix.archive-name }}" LICENSE README.md node_inject license-gen
         fi
     - name: Upload archive
-      uses: actions/upload-artifact@v3 # Updated to v3
+      uses: actions/upload-artifact@v3
       with:
         name: ${{ matrix.archive-name }}
         path: archive/${{ matrix.archive-name }}
